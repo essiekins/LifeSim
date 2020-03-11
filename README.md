@@ -26,8 +26,20 @@ If the player life towards the end of the game is over 190, they lived a perfect
 If over 160- great life
 If over 130, average life
 if over 100, poor life
-anything under 100 is a tragedy and a game lost, even if the end of the storyline
+anything under 100 is a tragedy and a game lost, even if the end of the storyline hasn't been met.
 
-
+TL;DR
+If your lifepoints drop under 20 at any point= game over.
+If you end the story narrative but your points are under 100, you lost.
+If your points are between 100-200, you win but with different tiers of winning.
 
 ![alt text](https://github.com/essiekins/LifeSim/blob/master/assets/wireframe_draft_1.png "Logo Title Text 1")
+
+Project timeline:
+- Wednesday: pseudo code, testing first life stage and points system in console
+- Thursday: adding storyline development and fine tunning further points for each
+- Friday: starting html and css inputs, further testing of points that might need altering.
+- Saturday: more html and css inputs and wrapping up over all story line/points.
+- Sunday: focus on art for each lifestage and full game testing.
+- Monday: full game testing and altering.
+- Tuesday: last minute css retouches, credits and comments. 
