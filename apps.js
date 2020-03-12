@@ -41,27 +41,37 @@ function switchOfBabyPhase(parents) {
     let answer="";
     switch(parents) {
         case 'a':
-        parents= "You were born on a rainy Sunday night. Your parents are a couple of loving people. Your father is very dotting and spends a lot of time with you, and your mother cooks the best meals and likes to stroll you around the park. You have a very large and loud family including three sisters, two brothers, a cat, and a dog. ";
+        answer= "You were born on a rainy Sunday night. Your parents are a couple of loving people. Your father is very dotting and spends a lot of time with you, and your mother cooks the best meals and likes to stroll you around the park. You have a very large and loud family including three sisters, two brothers, a cat, and a dog. ";
         break;
 
         case 'b':
-        parents= "Your father--may he rest in peace--died fighting a never ending war miles and miles away from home. He has left you an encouraging letter written during his last days when he learned his chances of survival weren't good. On this insanely hot summer afternoon, your mother reads it aloud to soothe your newborn cries. Your mother will have to be both the breadwinner and the emotional pillar of your early years. Your extended family is excited to have you around and they say you resemble your late father.";
+        answer= "Your father--may he rest in peace--died fighting a never ending war miles and miles away from home. He has left you an encouraging letter written during his last days when he learned his chances of survival weren't good. On this insanely hot summer afternoon, your mother reads it aloud to soothe your newborn cries. Your mother will have to be both the breadwinner and the emotional pillar of your early years. Your extended family is excited to have you around and they say you resemble your late father.";
         break;
 
         case 'c':
-        parents= "Your parents are unknown to you. On this sunny Tuesday in Autumn, you were born in a church-ran orphanage and will have to be raised by the nuns residing in the convent. Your new siblings from another mother, rejoice in the playground. Your early years will be strict and religious, yet safe.";
+        answer= "Your parents are unknown to you. On this sunny Tuesday in Autumn, you were born in a church-ran orphanage and will have to be raised by the nuns residing in the convent. Your new siblings from another mother, rejoice in the playground. Your early years will be strict and religious, yet safe.";
         break;
 
         case 'd':
-        parents= "Today is March, friday the 13th. It is thundering outside and your crackhead mother has just traded you for a box of menthols. The old lady who takes you into adoption was once her highschool teacher. Who is your father? Only the heavens know! You will never hear from your biological parents again, but at least you are brought into a home where a baby was truely a miracle. You will most likely be spoiled rotten."
+        answer= "Today is March, friday the 13th. It is thundering outside and your crackhead mother has just traded you for a box of menthols. The old lady who takes you into adoption was once her highschool teacher. Who is your father? Only the heavens know! You will never hear from your biological parents again, but at least you are brought into a home where a baby was truely a miracle. You will most likely be spoiled rotten."
         break;
 
         default:
-        parents="Please choose an option.";
+        answer="Please choose an option.";
         break;
-
+     
     }
+
+}
 /* testing output of text values */
 
-};
-console.log(switchOfBabyPhase(a))
+// return answer; --- answer not defined 
+//console.log(switchOfBabyPhase.parents(a));      ---parents not defined
+//console.log(switchOfBabyPhase(parents(a)));     ---- parents not defined
+//console.log(switchOfBabyPhase(a));   --- a not defined
+//tried outside and inside function
+
+//PROBLEM: not being able to console log or call a case answer!
+//not getting error but also not getting output, linked to html to see if anything goes on in there
+// function shows up in console
+// trying if else statement perhaps? <-- to be tried next!
