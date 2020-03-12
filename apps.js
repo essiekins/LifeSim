@@ -37,9 +37,11 @@ Changes made to points system:
 
 /* Testing: calling text values for Baby Phase: Parents */
 
+/*
+
 function switchOfBabyPhase(parents) {
     let answer=" ";
-    let parents= document.getElementById("option").value;
+    let parents= document.getElementById("display").value;
     switch(parents) {
         case 'a':
         text=("You were born on a rainy Sunday night. Your parents are a couple of loving people. Your father is very dotting and spends a lot of time with you, and your mother cooks the best meals and likes to stroll you around the park. You have a very large and loud family including three sisters, two brothers, a cat, and a dog. ");
@@ -64,6 +66,8 @@ function switchOfBabyPhase(parents) {
     }
     document.getElementById("parents").innerHTML=text;
 }
+*/
+
 /* testing output of text values */
 
 // return answer; --- answer not defined 
@@ -77,3 +81,14 @@ function switchOfBabyPhase(parents) {
 // function shows up in web console although not by calling.
 // trying if else statement perhaps? <-- to be tried next!
 
+//another approach using objects? 
+
+const parentsInLifeStart = [ {
+   a: "You were born on a rainy Sunday night. Your parents are a couple of loving people. Your father is very dotting and spends a lot of time with you, and your mother cooks the best meals and likes to stroll you around the park. You have a very large and loud family including three sisters, two brothers, a cat, and a dog. ",
+
+   b:"Your father--may he rest in peace--died fighting a never ending war miles and miles away from home. He has left you an encouraging letter written during his last days when he learned his chances of survival weren't good. On this insanely hot summer afternoon, your mother reads it aloud to soothe your newborn cries. Your mother will have to be both the breadwinner and the emotional pillar of your early years. Your extended family is excited to have you around and they say you resemble your late father.",
+
+   c: "Your parents are unknown to you. On this sunny Tuesday in Autumn, you were born in a church-ran orphanage and will have to be raised by the nuns residing in the convent. Your new siblings from another mother, rejoice in the playground. Your early years will be strict and religious, yet safe.",
+
+   d:"Today is March, Friday the 13th. It is thundering outside and your crackhead mother has just traded you for a box of menthols. The old lady who takes you into adoption was once her highschool teacher. Who is your father? Only the heavens know! You will never hear from your biological parents again, but at least you are brought into a home where a baby was truely a miracle. You will most likely be spoiled rotten."
+}];
