@@ -105,3 +105,34 @@ console.log(parentsInLifeStart.options.a)
 //objects won't work either
 // find an example of existing similar method next day
 
+//REMINDERS!
+//let A= Perfect parental situation. =  25 points
+//let B= Decent situation. = 20 points
+//let C=Not the best= 15 points
+//let D=Truly sad= 10 points
+
+
+/* the scores */
+let parentsA_Score= 25;
+let parentsB_Score= 20;
+let parentsC_Score= 15;
+let parentsD_Score= 10;
+
+/* the storylines */
+let parentsA_storyline = "This is a storyline."
+
+
+//the above are points for the points system, in addition...
+// I'll be renaming them afterwards to add text input
+
+
+function chooseParents() {
+  
+    if (parentsA_Score){
+        console.log(parentsA_storyline)
+    }
+  
+    
+};
+
+
