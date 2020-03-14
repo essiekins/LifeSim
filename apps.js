@@ -112,7 +112,10 @@ console.log(parentsInLifeStart.options.a)
 //let C=Not the best= 15 points
 //let D=Truly sad= 10 points
 
+// reference from  the Objects Workshop
 /* COME BACK TO THIS LATER WE'RE STUCK AGAIN T_T
+
+
 const user1 = {
     name: " ",
     score: 0,
@@ -277,6 +280,52 @@ submitButton.onclick = function(){
 
 */
 
-//decided to try something else but we might come back to this tutoral!
-// new method up next!
+//decided to try something else but we might come back to this tutoral! It was just too confusing.
 
+// new method up next!
+//functions and objects!
+
+const textElement= document.getElementById('text')
+const optionButtons=document.getElementById('option-buttons')
+
+function startGame() {
+
+}
+
+function showTextNode(textNodeIndex) {
+
+}
+
+function selectOption(option) {
+
+}
+
+const textNodes= [
+    id: chooseParents,
+    text: "Today is your birthday! Welcome to out big and confussing world. Let's find out who your parents are.",
+    
+    options [ { 
+         //this is option a
+         text: 'Your parents are unknown to you. On this sunny Tuesday in Autumn, you were born in a church-ran orphanage and will have to be raised by the nuns residing in the convent. Your new siblings from another mother, rejoice in the playground. Your early years will be strict and religious, yet safe.',
+        setState: {pointsAdded:15}, // add points sound later maybe?
+        nextText: b,
+
+    },
+    {  //option b
+        text:'Your father--may he rest in peace--died fighting a never ending war miles and miles away from home. He has left you an encouraging letter written during his last days when he learned his chances of survival weren\'t good. On this insanely hot summer afternoon, your mother reads it aloud to soothe your newborn cries. Your mother will have to be both the breadwinner and the emotional pillar of your early years. Your extended family is excited to have you around and they say you resemble your late father.',
+        setState: {pointsAdded:20},
+        nextText: c,
+    },
+   
+    {   //option c
+        text: "You were born on a rainy Sunday night. Your parents are a couple of loving people. Your father is very dotting and spends a lot of time with you, and your mother cooks the best meals and likes to stroll you around the park. You have a very large and loud family including three sisters, two brothers, a cat, and a dog. ",
+        setState: {pointsAdded:25},
+        nextText: d,
+    },
+   { //option d
+       
+   }
+   
+
+]
+]
