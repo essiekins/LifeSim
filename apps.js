@@ -106,33 +106,177 @@ console.log(parentsInLifeStart.options.a)
 // find an example of existing similar method next day
 
 //REMINDERS!
+//
 //let A= Perfect parental situation. =  25 points
 //let B= Decent situation. = 20 points
 //let C=Not the best= 15 points
 //let D=Truly sad= 10 points
 
-
-/* the scores */
-let parentsA_Score= 25;
-let parentsB_Score= 20;
-let parentsC_Score= 15;
-let parentsD_Score= 10;
-
-/* the storylines */
-let parentsA_storyline = "This is a storyline."
-
-
-//the above are points for the points system, in addition...
-// I'll be renaming them afterwards to add text input
-
-
-function chooseParents() {
-  
-    if (parentsA_Score){
-        console.log(parentsA_storyline)
+/* COME BACK TO THIS LATER WE'RE STUCK AGAIN T_T
+const user1 = {
+    name: " ",
+    score: 0,
+    increment: function() {
+        chooseParents.score++         // decrement with score--
     }
-  
-    
-};
+}
 
+
+const chooseParentsA = {
+    score: 25,
+    increment: function addPoints() {
+        user1.score++       // decrement with score--
+    }
+}
+//user1.increment() // => 1
+console.log(user1.score + chooseParents.score++);
+
+const chooseParentsB = {
+    score: 20,
+    increment: function addPoints() {
+        user1.score++       // decrement with score--
+    }
+}
+//user1.increment() // => 1
+console.log(user1.score + chooseParents.score++);
+*/
+
+//trying out putting everything in its own function
+
+// BEGINING TUTORIAL please look back for reference"
+// https://simplestepscode.com/javascript-quiz-tutorial/
+// https://simplestepscode.com/javascript-quiz-tutorial/#step1
+
+// this following code is not my work, I repeat: following a tutorial with hopes of finding a way to implement scores and storylines. 
+
+/*
+function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+
+	function showQuestions(questions, quizContainer){
+		// we'll need a place to store the output and the answer choices
+	var output = [];
+	var answers;
+
+	// for each question...
+	for(var i=0; i<questions.length; i++){
+		
+		// first reset the list of answers
+		answers = [];
+
+		// for each available answer to this question...
+		for(letter in questions[i].answers){
+
+			// ...add an html radio button
+			answers.push(
+				'<label>'
+					+ '<input type="radio" name="question'+i+'" value="'+letter+'">'
+					+ letter + ': '
+					+ questions[i].answers[letter]
+				+ '</label>'
+			);
+		}
+
+		// add this question and its answers to the output
+		output.push(
+			'<div class="question">' + questions[i].question + '</div>'
+			+ '<div class="answers">' + answers.join('') + '</div>'
+		);
+	}
+
+	// finally combine our output list into one string of html and put it on the page
+	quizContainer.innerHTML = output.join('');
+}
+	}
+
+	function showResults(questions, quizContainer, resultsContainer){
+		// code will go here
+	}
+
+	// show the questions
+	showQuestions(questions, quizContainer);
+
+	// when user clicks submit, show results
+	submitButton.onclick = function(){
+		showResults(questions, quizContainer, resultsContainer);
+	}
+
+var myQuestions = [
+	{
+		question: "What is 10/2?",
+		answers: {
+			a: '3',
+			b: '5',
+			c: '115'
+		},
+		correctAnswer: 'b'
+	},
+	{
+		question: "What is 30/3?",
+		answers: {
+			a: '3',
+			b: '5',
+			c: '10'
+		},
+		correctAnswer: 'c'
+	}
+];
+
+// Step 3: On submit, show the results
+
+// We'll need to fill out our showResults function to show the results of our quiz.
+
+// Here's how our JavaScript logic will look:
+
+//     For each question, find the selected answer
+//     If the answer is correct, respond accordingly
+//     If the answer is wrong, respond accordingly
+//     Show the number of correct answers out of the total
+
+// And here's the JavaScript to show the results of our quiz:
+
+function showResults(questions, quizContainer, resultsContainer){
+	
+	// gather answer containers from our quiz
+	var answerContainers = quizContainer.querySelectorAll('.answers');
+	
+	// keep track of user's answers
+	var userAnswer = '';
+	var numCorrect = 0;
+	
+	// for each question...
+	for(var i=0; i<questions.length; i++){
+
+		// find selected answer
+		userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+		
+		// if answer is correct
+		if(userAnswer===questions[i].correctAnswer){
+			// add to the number of correct answers
+			numCorrect++;
+			
+			// color the answers green
+			answerContainers[i].style.color = 'lightgreen';
+		}
+		// if answer is wrong or blank
+		else{
+			// color the answers red
+			answerContainers[i].style.color = 'red';
+		}
+	}
+
+	// show number of correct answers out of total
+	resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+}
+
+// on submit, show results
+submitButton.onclick = function(){
+	showResults(questions, quizContainer, resultsContainer);
+}
+
+//Note that the submitButton variable comes from our original generateQuiz function as one of the parameters.
+
+*/
+
+//decided to try something else but we might come back to this tutoral!
+// new method up next!
 

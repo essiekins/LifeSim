@@ -1,0 +1,57 @@
+body{
+    background-image: url(./assets/Pixel\ people\ pattern.jpg);
+    background-repeat: repeat;
+    margin:0 auto;
+}
+ .centerMe {
+    position: absolute;
+    display:flex;
+    align-items: center;
+      
+}
+
+#gameContainer{
+    display:flex;
+    align-items: center;
+    background-color:pink;
+    height:700px;
+    width:450px;
+    border-radius: 20px;
+    margin-top:100px;
+    margin-bottom:50px;
+}
+
+#screen{
+    justify-content: center;
+    background-color:rgb(179, 179, 179);
+    height:350px;
+    width:350px;
+    border-radius: 20px;
+    
+    
+}
+
+.btn {
+	box-shadow:inset 3px 4px 6px 0px #efdcfb;
+	background:linear-gradient(to bottom, #dfbdfa 5%, #73419c 100%);
+	background-color:#dfbdfa;
+	border-radius:42px;
+	border:1px solid #c99dc9;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:28px;
+	font-weight:bold;
+	padding:11px 13px;
+	text-decoration:none;
+	text-shadow:0px 1px 1px #6611b0;
+}
+.btn:hover {
+	background:linear-gradient(to bottom, #73419c 5%, #dfbdfa 100%);
+	background-color:#73419c;
+}
+.btn:active {
+	position:relative;
+	top:1px;
+}
