@@ -285,15 +285,18 @@ submitButton.onclick = function(){
 // new method up next!
 //functions and objects!
 
+//TEXT AND BUTTONS OUTPUT
 const textElement= document.getElementById('text')
 const optionButtons=document.getElementById('option-buttons')
  
+//RUNING GAME
 function startGame() {
 state= {}
 showTextNode(a)
 
 }
 
+//for text to pair up according to its ID, example chooseParents, chooseHealth etc. for start up phase
 function showTextNode(textNodeIndex) {
   const textNode = textnodes.find(textNode.id === textNodeIndex)
   textElement.innerText = textNode.text
@@ -301,15 +304,20 @@ function showTextNode(textNodeIndex) {
       optionsButtons.removeChild(optionsButtons.firstChild)
   }
 }
+
+//for each element, show it's option when clicked
 textNode.options.array.forEach(element => {
     id (showOption(option)){
         return true
     }
 });
 
+// selecting a b c d
 function selectOption(option) {
 
 }
+
+// text to be outputed for chooseParents scenario
 
 const textNodes= [
     id: chooseParents,
@@ -335,6 +343,7 @@ const textNodes= [
     },
    { //option d
        text:"Today is March, Friday the 13th. It is thundering outside and your crackhead mother has just traded you for a box of menthols. The old lady who takes you into adoption was once her highschool teacher. Who is your father? Only the heavens know! You will never hear from your biological parents again, but at least you are brought into a home where a baby was truely a miracle. You will most likely be spoiled rotten.",
+       setState: {pointsAdded:10},
    }
    
 
