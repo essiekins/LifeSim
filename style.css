@@ -7,7 +7,7 @@ body{
     margin-top: 25px;
 }
 
-
+/* this seems to be centering the buttons at least */
  .centerMe {
     position: fixed;
     text-align: center;
@@ -15,10 +15,13 @@ body{
 }
 
 #gameContainer{
-    background-color:pink;
+    background-color:pink opacity 0.5;
     height:700px;
     width:450px;
     border-radius: 20px;
+    box-shadow:inset 3px 10px 10px 10px #efdcfb;
+    background:linear-gradient(to bottom, #b4f4ff 5%, #ffa2f0 100%);
+	background-color:#dfbdfa;
 
 }
 
@@ -28,11 +31,17 @@ body{
     height:350px;
     width:350px;
     border-radius: 20px;
-    
-    
+    position:relative;
+    text-align:center;
+    top: 40px;
+    margin-left: 52px;
+
 }
 
 .btn {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
 	box-shadow:inset 3px 4px 6px 0px #efdcfb;
 	background:linear-gradient(to bottom, #dfbdfa 5%, #73419c 100%);
 	background-color:#dfbdfa;
@@ -46,7 +55,8 @@ body{
 	font-weight:bold;
 	padding:11px 13px;
 	text-decoration:none;
-	text-shadow:0px 1px 1px #6611b0;
+    text-shadow:0px 1px 1px #6611b0;
+    margin-top:100px;
 }
 .btn:hover {
 	background:linear-gradient(to bottom, #73419c 5%, #dfbdfa 100%);
@@ -54,5 +64,5 @@ body{
 }
 .btn:active {
 	position:relative;
-	top:1px;
+	padding-top:20px !important;
 }
