@@ -287,14 +287,25 @@ submitButton.onclick = function(){
 
 const textElement= document.getElementById('text')
 const optionButtons=document.getElementById('option-buttons')
-
+ 
 function startGame() {
+state= {}
+showTextNode(a)
 
 }
 
 function showTextNode(textNodeIndex) {
-
+  const textNode = textnodes.find(textNode.id === textNodeIndex)
+  textElement.innerText = textNode.text
+  while(optionsButtons.firstChild) {
+      optionsButtons.removeChild(optionsButtons.firstChild)
+  }
 }
+textNode.options.array.forEach(element => {
+    id (showOption(option)){
+        return true
+    }
+});
 
 function selectOption(option) {
 
@@ -323,7 +334,7 @@ const textNodes= [
         nextText: d,
     },
    { //option d
-       
+       text:"Today is March, Friday the 13th. It is thundering outside and your crackhead mother has just traded you for a box of menthols. The old lady who takes you into adoption was once her highschool teacher. Who is your father? Only the heavens know! You will never hear from your biological parents again, but at least you are brought into a home where a baby was truely a miracle. You will most likely be spoiled rotten.",
    }
    
 
