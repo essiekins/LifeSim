@@ -305,10 +305,17 @@ function showTextNode(textNodeIndex) {
   }
 }
 
-//for each element, show it's option when clicked
-textNode.options.array.forEach(element => {
-    id (showOption(option)){
-        return true
+//for each element, show it's option when clicked. so each click is first showing options for the buttons, which calls out for a click and then an output
+
+// if I get stuck check function selectOption
+
+textNode.options.forEach(element => {
+    if (showOption(option)){
+        const button = document.createElement('button')
+        button.innerText=option.text
+        button.classList.add('btn')
+        button.addEventListener ('click',() => selectOption(option) )
+        optionButtons.appendChild(button)
     }
 });
 
@@ -318,6 +325,10 @@ function selectOption(option) {
 }
 
 // text to be outputed for chooseParents scenario
+
+// I LEFT OFF HERE!!!!!!
+
+//there's a syntax error in const textNodes that needs fixing asap! before moving on to next scenario
 
 const textNodes= [
     id: chooseParents,
