@@ -333,7 +333,7 @@ function selectOption(option) {
 const textNodes = [ {
     
     id: chooseParents,
-    text:"Today is your birthday! Welcome to out big and confussing world. Let's find out who your parents are.",
+    text:"Today is your birthday! Welcome to our big and confussing world. Let's find out who your parents are.",
     
     options: [
     
