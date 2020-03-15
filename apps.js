@@ -313,7 +313,7 @@ function showTextNode(textNodeIndex) {
 
 // if I get stuck check function below
 
-textNode.options.forEach(element => {
+textNode.options.forEach(element => { //according to the web console textNode is not defined. FIX IT!
     if (showOption(option)){
         const button = document.createElement('button')
         button.innerText=option.text
