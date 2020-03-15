@@ -49,7 +49,7 @@ body{
     background-color: rgb(169, 212, 218); /* adding a bg color so I can see what space the text will take, might remove later */
 
 }
- .text{
+ #text{
      color:white;
      z-index: 90;
      text-align: start;

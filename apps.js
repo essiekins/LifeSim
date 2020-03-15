@@ -294,6 +294,15 @@ const optionButtons = document.getElementById('option-buttons');
 
 //RUNING GAME: there will be an overall function running my game, and a state which I will try to use to log points per scenario option? let's see if that works for states tho
 
+// adding id's initial values to stop undefined errors
+let chooseParents= {};
+let chooseHealth= {};
+let chooseEconomy={};
+let chooseVirtue= {};
+let score={pointsAdded:' '};
+let state={};
+
+
 function startGame() {
     state = {}
     showTextNode(chooseParents);
@@ -323,12 +332,6 @@ function showTextNode(textNodeIndex) {
         }
     });
 }
-// // adding id's initial values to stop undefined errors
-// let chooseParents= ' ';
-// let chooseHealth= ' ';
-// let chooseEconomy=' ';
-// let chooseVirtue= ' ';
-let score={pointsAdded:' '};
 
 // selecting a b c d
 function selectOption(option) {
@@ -338,7 +341,7 @@ function selectOption(option) {
 // text to be outputed for chooseParents scenario
 
 const textNodes = [{
-
+    
     id: chooseParents,
     text: "Today is your birthday! Welcome to our big and confussing world. Let's find out who your parents are.",
 
@@ -369,5 +372,5 @@ const textNodes = [{
         }
 
     ]
-        
+ 
 }];
