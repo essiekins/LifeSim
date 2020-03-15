@@ -334,33 +334,36 @@ function selectOption(option) {
 
 //there's a syntax error in const textNodes that needs fixing asap! before moving on to next scenario
 
-const textNodes = [ 
+const textNodes = [ {
+    
     id: chooseParents,
     text:"Today is your birthday! Welcome to out big and confussing world. Let's find out who your parents are.",
     
-    options [ { 
+    options: [
+    
          //this is option a
+         {
          text: 'Your parents are unknown to you. On this sunny Tuesday in Autumn, you were born in a church-ran orphanage and will have to be raised by the nuns residing in the convent. Your new siblings from another mother, rejoice in the playground. Your early years will be strict and religious, yet safe.',
-        setState: {pointsAdded:15}, // add points sound later maybe?
-        nextText: b,
+         setState: {pointsAdded:15}, // add points sound later maybe?
+         nextText: b,
+         },
 
-    },
-    {  //option b
-        text:'Your father--may he rest in peace--died fighting a never ending war miles and miles away from home. He has left you an encouraging letter written during his last days when he learned his chances of survival weren\'t good. On this insanely hot summer afternoon, your mother reads it aloud to soothe your newborn cries. Your mother will have to be both the breadwinner and the emotional pillar of your early years. Your extended family is excited to have you around and they say you resemble your late father.',
-        setState: {pointsAdded:20},
-        nextText: c,
-    },
+        {  //option b
+            text:'Your father--may he rest in peace--died fighting a never ending war miles and miles away from home. He has left you an encouraging letter written during his last days when he learned his chances of survival weren\'t good. On this insanely hot summer afternoon, your mother reads it aloud to soothe your newborn cries. Your mother will have to be both the breadwinner and the emotional pillar of your early years. Your extended family is excited to have you around and they say you resemble your late father.',
+            setState: {pointsAdded:20},
+            nextText: c,
+        },
    
-    {   //option c
-        text: "You were born on a rainy Sunday night. Your parents are a couple of loving people. Your father is very dotting and spends a lot of time with you, and your mother cooks the best meals and likes to stroll you around the park. You have a very large and loud family including three sisters, two brothers, a cat, and a dog. ",
-        setState: {pointsAdded:25},
-        nextText: d,
-    },
-   { //option d
-       text:"Today is March, Friday the 13th. It is thundering outside and your crackhead mother has just traded you for a box of menthols. The old lady who takes you into adoption was once her highschool teacher. Who is your father? Only the heavens know! You will never hear from your biological parents again, but at least you are brought into a home where a baby was truely a miracle. You will most likely be spoiled rotten.",
-       setState: {pointsAdded:10},
-   }
-   
+        {   //option c
+            text: "You were born on a rainy Sunday night. Your parents are a couple of loving people. Your father is very dotting and spends a lot of time with you, and your mother cooks the best meals and likes to stroll you around the park. You have a very large and loud family including three sisters, two brothers, a cat, and a dog. ",
+            setState: {pointsAdded:25},
+            nextText: d,
+        },
+        { //option d
+            text:"Today is March, Friday the 13th. It is thundering outside and your crackhead mother has just traded you for a box of menthols. The old lady who takes you into adoption was once her highschool teacher. Who is your father? Only the heavens know! You will never hear from your biological parents again, but at least you are brought into a home where a baby was truely a miracle. You will most likely be spoiled rotten.",
+            setState: {pointsAdded:10},
+        }
 
-]
-]
+    ]
+
+}]
