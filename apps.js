@@ -330,10 +330,6 @@ function selectOption(option) {
 
 // text to be outputed for chooseParents scenario
 
-// I LEFT OFF HERE!!!!!! saturday 7pm. 
-
-//there's a syntax error in const textNodes that needs fixing asap! before moving on to next scenario
-
 const textNodes = [ {
     
     id: chooseParents,
