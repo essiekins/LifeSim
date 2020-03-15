@@ -1,284 +1,284 @@
-/*
-Choosey Life Game pseudo code test 1: Balancing out the Life Points!
+// /*
+// Choosey Life Game pseudo code test 1: Balancing out the Life Points!
 
-***** Goals *****
+// ***** Goals *****
 
-1- Balancing option's point system to make sense towards its max total. 
-2- Logging result of sum or substraction of points.
-3- Determinating a minimum and max amount of points reached by end of storyline.
-Note for #3: the max and min amount of points won't be determined till all options are constructed.
-Therefore, the ultimate score will absolutely need to be modified, because 200 will most likely be surpassed.
+// 1- Balancing option's point system to make sense towards its max total. 
+// 2- Logging result of sum or substraction of points.
+// 3- Determinating a minimum and max amount of points reached by end of storyline.
+// Note for #3: the max and min amount of points won't be determined till all options are constructed.
+// Therefore, the ultimate score will absolutely need to be modified, because 200 will most likely be surpassed.
 
-//example where the options return values going from 1 to 100 points, and the total of the first 3 sections: health, parenting, and economic background lead to 100 points: 
+// //example where the options return values going from 1 to 100 points, and the total of the first 3 sections: health, parenting, and economic background lead to 100 points: 
 
-//now testing Starting Phase which total will = up to 25 points?
-// virtue = max of 25 points <-- new addition.
-// parenting= max of 25 points
-// health = max of 25 points
-// economic background= max of 25 points
+// //now testing Starting Phase which total will = up to 25 points?
+// // virtue = max of 25 points <-- new addition.
+// // parenting= max of 25 points
+// // health = max of 25 points
+// // economic background= max of 25 points
 
-// We now have a cap of 100 points max for the Baby phase. Which means that if EACH phase's total output has a max of 25 points, total starting Life Points will not pass 100. 
+// // We now have a cap of 100 points max for the Baby phase. Which means that if EACH phase's total output has a max of 25 points, total starting Life Points will not pass 100. 
 
-//let A= Perfect parental situation. =  25 points
-//let B= Decent situation. = 20 points
-//let C=Not the best= 15 points
-//let D=Truly sad= 10 points
+// //let A= Perfect parental situation. =  25 points
+// //let B= Decent situation. = 20 points
+// //let C=Not the best= 15 points
+// //let D=Truly sad= 10 points
 
-Changes made to points system:
-  1- 'Virtue' was added so that each section would give us 25 EVEN points towards 100 starting Life Points, because 4/100 = 25
-  2- If the lowest option for each of the 4 starting sections is worth 10 points, then the minimum amount of points for overall starting Life Points is definetly 40. because 4*10=40.
+// Changes made to points system:
+//   1- 'Virtue' was added so that each section would give us 25 EVEN points towards 100 starting Life Points, because 4/100 = 25
+//   2- If the lowest option for each of the 4 starting sections is worth 10 points, then the minimum amount of points for overall starting Life Points is definetly 40. because 4*10=40.
 
-  Goals achieved:
-  1- Balanced and determined that the Baby Phase will have 4 determining factors in which each one will output a max of 25 points and minimum of 40 points towards total Baby Phase aka Starting Points.
+//   Goals achieved:
+//   1- Balanced and determined that the Baby Phase will have 4 determining factors in which each one will output a max of 25 points and minimum of 40 points towards total Baby Phase aka Starting Points.
 
-  ****==== Baby Phase is now changed to be worth from 40-100 points. ====******
+//   ****==== Baby Phase is now changed to be worth from 40-100 points. ====******
   
- */
+//  */
 
-/* Testing: calling text values for Baby Phase: Parents */
+// /* Testing: calling text values for Baby Phase: Parents */
 
-/*
+// /*
 
-function switchOfBabyPhase(parents) {
-    let answer=" ";
-    let parents= document.getElementById("display").value;
-    switch(parents) {
-        case 'a':
-        text=("You were born on a rainy Sunday night. Your parents are a couple of loving people. Your father is very dotting and spends a lot of time with you, and your mother cooks the best meals and likes to stroll you around the park. You have a very large and loud family including three sisters, two brothers, a cat, and a dog. ");
-        break;
+// function switchOfBabyPhase(parents) {
+//     let answer=" ";
+//     let parents= document.getElementById("display").value;
+//     switch(parents) {
+//         case 'a':
+//         text=("You were born on a rainy Sunday night. Your parents are a couple of loving people. Your father is very dotting and spends a lot of time with you, and your mother cooks the best meals and likes to stroll you around the park. You have a very large and loud family including three sisters, two brothers, a cat, and a dog. ");
+//         break;
 
-        case 'b':
-        text=("Your father--may he rest in peace--died fighting a never ending war miles and miles away from home. He has left you an encouraging letter written during his last days when he learned his chances of survival weren't good. On this insanely hot summer afternoon, your mother reads it aloud to soothe your newborn cries. Your mother will have to be both the breadwinner and the emotional pillar of your early years. Your extended family is excited to have you around and they say you resemble your late father.");
-        break;
+//         case 'b':
+//         text=("Your father--may he rest in peace--died fighting a never ending war miles and miles away from home. He has left you an encouraging letter written during his last days when he learned his chances of survival weren't good. On this insanely hot summer afternoon, your mother reads it aloud to soothe your newborn cries. Your mother will have to be both the breadwinner and the emotional pillar of your early years. Your extended family is excited to have you around and they say you resemble your late father.");
+//         break;
 
-        case 'c':
-        text=("Your parents are unknown to you. On this sunny Tuesday in Autumn, you were born in a church-ran orphanage and will have to be raised by the nuns residing in the convent. Your new siblings from another mother, rejoice in the playground. Your early years will be strict and religious, yet safe.");
-        break;
+//         case 'c':
+//         text=("Your parents are unknown to you. On this sunny Tuesday in Autumn, you were born in a church-ran orphanage and will have to be raised by the nuns residing in the convent. Your new siblings from another mother, rejoice in the playground. Your early years will be strict and religious, yet safe.");
+//         break;
 
-        case 'd':
-       text=("Today is March, friday the 13th. It is thundering outside and your crackhead mother has just traded you for a box of menthols. The old lady who takes you into adoption was once her highschool teacher. Who is your father? Only the heavens know! You will never hear from your biological parents again, but at least you are brought into a home where a baby was truely a miracle. You will most likely be spoiled rotten.")
-        break;
+//         case 'd':
+//        text=("Today is March, friday the 13th. It is thundering outside and your crackhead mother has just traded you for a box of menthols. The old lady who takes you into adoption was once her highschool teacher. Who is your father? Only the heavens know! You will never hear from your biological parents again, but at least you are brought into a home where a baby was truely a miracle. You will most likely be spoiled rotten.")
+//         break;
 
-        default:
-        text=("Please choose an option.");
-        break;
+//         default:
+//         text=("Please choose an option.");
+//         break;
      
-    }
-    document.getElementById("parents").innerHTML=text;
-}
-*/
+//     }
+//     document.getElementById("parents").innerHTML=text;
+// }
+// */
 
-/* testing output of text values */
+// /* testing output of text values */
 
-// return answer; --- answer not defined 
-//console.log(switchOfBabyPhase.parents(a));      ---parents not defined
-//console.log(switchOfBabyPhase(parents(a)));     ---- parents not defined
-//console.log(switchOfBabyPhase(a));   --- a not defined
-//tried outside and inside function
+// // return answer; --- answer not defined 
+// //console.log(switchOfBabyPhase.parents(a));      ---parents not defined
+// //console.log(switchOfBabyPhase(parents(a)));     ---- parents not defined
+// //console.log(switchOfBabyPhase(a));   --- a not defined
+// //tried outside and inside function
 
-//PROBLEM: not being able to console log or call a case answer!
-//not getting error but also not getting output, linked to html to see if anything goes on in there
-// function shows up in web console although not by calling.
-// trying if else statement perhaps? <-- to be tried next!
+// //PROBLEM: not being able to console log or call a case answer!
+// //not getting error but also not getting output, linked to html to see if anything goes on in there
+// // function shows up in web console although not by calling.
+// // trying if else statement perhaps? <-- to be tried next!
 
-//another approach using objects? 
+// //another approach using objects? 
 
-/*
-const parentsInLifeStart = [ {
+// /*
+// const parentsInLifeStart = [ {
 
-    scenario: "Today is your birthday! Welcome to out big and confussing world. Let's find out who your parents are.",
+//     scenario: "Today is your birthday! Welcome to out big and confussing world. Let's find out who your parents are.",
 
-    options: {
-        a:"You were born on a rainy Sunday night. Your parents are a couple of loving people. Your father is very dotting and spends a lot of time with you, and your mother cooks the best meals and likes to stroll you around the park. You have a very large and loud family including three sisters, two brothers, a cat, and a dog. ",
+//     options: {
+//         a:"You were born on a rainy Sunday night. Your parents are a couple of loving people. Your father is very dotting and spends a lot of time with you, and your mother cooks the best meals and likes to stroll you around the park. You have a very large and loud family including three sisters, two brothers, a cat, and a dog. ",
 
-        b:"Your father--may he rest in peace--died fighting a never ending war miles and miles away from home. He has left you an encouraging letter written during his last days when he learned his chances of survival weren't good. On this insanely hot summer afternoon, your mother reads it aloud to soothe your newborn cries. Your mother will have to be both the breadwinner and the emotional pillar of your early years. Your extended family is excited to have you around and they say you resemble your late father.",
+//         b:"Your father--may he rest in peace--died fighting a never ending war miles and miles away from home. He has left you an encouraging letter written during his last days when he learned his chances of survival weren't good. On this insanely hot summer afternoon, your mother reads it aloud to soothe your newborn cries. Your mother will have to be both the breadwinner and the emotional pillar of your early years. Your extended family is excited to have you around and they say you resemble your late father.",
 
-        c:"Your parents are unknown to you. On this sunny Tuesday in Autumn, you were born in a church-ran orphanage and will have to be raised by the nuns residing in the convent. Your new siblings from another mother, rejoice in the playground. Your early years will be strict and religious, yet safe.",
+//         c:"Your parents are unknown to you. On this sunny Tuesday in Autumn, you were born in a church-ran orphanage and will have to be raised by the nuns residing in the convent. Your new siblings from another mother, rejoice in the playground. Your early years will be strict and religious, yet safe.",
 
-        d:"Today is March, Friday the 13th. It is thundering outside and your crackhead mother has just traded you for a box of menthols. The old lady who takes you into adoption was once her highschool teacher. Who is your father? Only the heavens know! You will never hear from your biological parents again, but at least you are brought into a home where a baby was truely a miracle. You will most likely be spoiled rotten.",
-    }
+//         d:"Today is March, Friday the 13th. It is thundering outside and your crackhead mother has just traded you for a box of menthols. The old lady who takes you into adoption was once her highschool teacher. Who is your father? Only the heavens know! You will never hear from your biological parents again, but at least you are brought into a home where a baby was truely a miracle. You will most likely be spoiled rotten.",
+//     }
     
-}];
-console.log(parentsInLifeStart.options.a)
-*/
+// }];
+// console.log(parentsInLifeStart.options.a)
+// */
 
-//objects won't work either
-// find an example of existing similar method next day
+// //objects won't work either
+// // find an example of existing similar method next day
 
-//REMINDERS!
-//
-//let A= Perfect parental situation. =  25 points
-//let B= Decent situation. = 20 points
-//let C=Not the best= 15 points
-//let D=Truly sad= 10 points
+// //REMINDERS!
+// //
+// //let A= Perfect parental situation. =  25 points
+// //let B= Decent situation. = 20 points
+// //let C=Not the best= 15 points
+// //let D=Truly sad= 10 points
 
-// reference from  the Objects Workshop
-/* COME BACK TO THIS LATER WE'RE STUCK AGAIN T_T
-
-
-const user1 = {
-    name: " ",
-    score: 0,
-    increment: function() {
-        chooseParents.score++         // decrement with score--
-    }
-}
+// // reference from  the Objects Workshop
+// /* COME BACK TO THIS LATER WE'RE STUCK AGAIN T_T
 
 
-const chooseParentsA = {
-    score: 25,
-    increment: function addPoints() {
-        user1.score++       // decrement with score--
-    }
-}
-//user1.increment() // => 1
-console.log(user1.score + chooseParents.score++);
+// const user1 = {
+//     name: " ",
+//     score: 0,
+//     increment: function() {
+//         chooseParents.score++         // decrement with score--
+//     }
+// }
 
-const chooseParentsB = {
-    score: 20,
-    increment: function addPoints() {
-        user1.score++       // decrement with score--
-    }
-}
-//user1.increment() // => 1
-console.log(user1.score + chooseParents.score++);
-*/
 
-//trying out putting everything in its own function
+// const chooseParentsA = {
+//     score: 25,
+//     increment: function addPoints() {
+//         user1.score++       // decrement with score--
+//     }
+// }
+// //user1.increment() // => 1
+// console.log(user1.score + chooseParents.score++);
 
-// BEGINING TUTORIAL please look back for reference"
-// https://simplestepscode.com/javascript-quiz-tutorial/
-// https://simplestepscode.com/javascript-quiz-tutorial/#step1
+// const chooseParentsB = {
+//     score: 20,
+//     increment: function addPoints() {
+//         user1.score++       // decrement with score--
+//     }
+// }
+// //user1.increment() // => 1
+// console.log(user1.score + chooseParents.score++);
+// */
 
-// this following code is not my work, I repeat: following a tutorial with hopes of finding a way to implement scores and storylines. 
+// //trying out putting everything in its own function
 
-/*
-function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+// // BEGINING TUTORIAL please look back for reference"
+// // https://simplestepscode.com/javascript-quiz-tutorial/
+// // https://simplestepscode.com/javascript-quiz-tutorial/#step1
 
-	function showQuestions(questions, quizContainer){
-		// we'll need a place to store the output and the answer choices
-	var output = [];
-	var answers;
+// // this following code is not my work, I repeat: following a tutorial with hopes of finding a way to implement scores and storylines. 
 
-	// for each question...
-	for(var i=0; i<questions.length; i++){
+// /*
+// function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+
+// 	function showQuestions(questions, quizContainer){
+// 		// we'll need a place to store the output and the answer choices
+// 	var output = [];
+// 	var answers;
+
+// 	// for each question...
+// 	for(var i=0; i<questions.length; i++){
 		
-		// first reset the list of answers
-		answers = [];
+// 		// first reset the list of answers
+// 		answers = [];
 
-		// for each available answer to this question...
-		for(letter in questions[i].answers){
+// 		// for each available answer to this question...
+// 		for(letter in questions[i].answers){
 
-			// ...add an html radio button
-			answers.push(
-				'<label>'
-					+ '<input type="radio" name="question'+i+'" value="'+letter+'">'
-					+ letter + ': '
-					+ questions[i].answers[letter]
-				+ '</label>'
-			);
-		}
+// 			// ...add an html radio button
+// 			answers.push(
+// 				'<label>'
+// 					+ '<input type="radio" name="question'+i+'" value="'+letter+'">'
+// 					+ letter + ': '
+// 					+ questions[i].answers[letter]
+// 				+ '</label>'
+// 			);
+// 		}
 
-		// add this question and its answers to the output
-		output.push(
-			'<div class="question">' + questions[i].question + '</div>'
-			+ '<div class="answers">' + answers.join('') + '</div>'
-		);
-	}
+// 		// add this question and its answers to the output
+// 		output.push(
+// 			'<div class="question">' + questions[i].question + '</div>'
+// 			+ '<div class="answers">' + answers.join('') + '</div>'
+// 		);
+// 	}
 
-	// finally combine our output list into one string of html and put it on the page
-	quizContainer.innerHTML = output.join('');
-}
-	}
+// 	// finally combine our output list into one string of html and put it on the page
+// 	quizContainer.innerHTML = output.join('');
+// }
+// 	}
 
-	function showResults(questions, quizContainer, resultsContainer){
-		// code will go here
-	}
+// 	function showResults(questions, quizContainer, resultsContainer){
+// 		// code will go here
+// 	}
 
-	// show the questions
-	showQuestions(questions, quizContainer);
+// 	// show the questions
+// 	showQuestions(questions, quizContainer);
 
-	// when user clicks submit, show results
-	submitButton.onclick = function(){
-		showResults(questions, quizContainer, resultsContainer);
-	}
+// 	// when user clicks submit, show results
+// 	submitButton.onclick = function(){
+// 		showResults(questions, quizContainer, resultsContainer);
+// 	}
 
-var myQuestions = [
-	{
-		question: "What is 10/2?",
-		answers: {
-			a: '3',
-			b: '5',
-			c: '115'
-		},
-		correctAnswer: 'b'
-	},
-	{
-		question: "What is 30/3?",
-		answers: {
-			a: '3',
-			b: '5',
-			c: '10'
-		},
-		correctAnswer: 'c'
-	}
-];
+// var myQuestions = [
+// 	{
+// 		question: "What is 10/2?",
+// 		answers: {
+// 			a: '3',
+// 			b: '5',
+// 			c: '115'
+// 		},
+// 		correctAnswer: 'b'
+// 	},
+// 	{
+// 		question: "What is 30/3?",
+// 		answers: {
+// 			a: '3',
+// 			b: '5',
+// 			c: '10'
+// 		},
+// 		correctAnswer: 'c'
+// 	}
+// ];
 
-// Step 3: On submit, show the results
+// // Step 3: On submit, show the results
 
-// We'll need to fill out our showResults function to show the results of our quiz.
+// // We'll need to fill out our showResults function to show the results of our quiz.
 
-// Here's how our JavaScript logic will look:
+// // Here's how our JavaScript logic will look:
 
-//     For each question, find the selected answer
-//     If the answer is correct, respond accordingly
-//     If the answer is wrong, respond accordingly
-//     Show the number of correct answers out of the total
+// //     For each question, find the selected answer
+// //     If the answer is correct, respond accordingly
+// //     If the answer is wrong, respond accordingly
+// //     Show the number of correct answers out of the total
 
-// And here's the JavaScript to show the results of our quiz:
+// // And here's the JavaScript to show the results of our quiz:
 
-function showResults(questions, quizContainer, resultsContainer){
+// function showResults(questions, quizContainer, resultsContainer){
 	
-	// gather answer containers from our quiz
-	var answerContainers = quizContainer.querySelectorAll('.answers');
+// 	// gather answer containers from our quiz
+// 	var answerContainers = quizContainer.querySelectorAll('.answers');
 	
-	// keep track of user's answers
-	var userAnswer = '';
-	var numCorrect = 0;
+// 	// keep track of user's answers
+// 	var userAnswer = '';
+// 	var numCorrect = 0;
 	
-	// for each question...
-	for(var i=0; i<questions.length; i++){
+// 	// for each question...
+// 	for(var i=0; i<questions.length; i++){
 
-		// find selected answer
-		userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+// 		// find selected answer
+// 		userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
 		
-		// if answer is correct
-		if(userAnswer===questions[i].correctAnswer){
-			// add to the number of correct answers
-			numCorrect++;
+// 		// if answer is correct
+// 		if(userAnswer===questions[i].correctAnswer){
+// 			// add to the number of correct answers
+// 			numCorrect++;
 			
-			// color the answers green
-			answerContainers[i].style.color = 'lightgreen';
-		}
-		// if answer is wrong or blank
-		else{
-			// color the answers red
-			answerContainers[i].style.color = 'red';
-		}
-	}
+// 			// color the answers green
+// 			answerContainers[i].style.color = 'lightgreen';
+// 		}
+// 		// if answer is wrong or blank
+// 		else{
+// 			// color the answers red
+// 			answerContainers[i].style.color = 'red';
+// 		}
+// 	}
 
-	// show number of correct answers out of total
-	resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
-}
+// 	// show number of correct answers out of total
+// 	resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+// }
 
-// on submit, show results
-submitButton.onclick = function(){
-	showResults(questions, quizContainer, resultsContainer);
-}
+// // on submit, show results
+// submitButton.onclick = function(){
+// 	showResults(questions, quizContainer, resultsContainer);
+// }
 
-//Note that the submitButton variable comes from our original generateQuiz function as one of the parameters.
+// //Note that the submitButton variable comes from our original generateQuiz function as one of the parameters.
 
-*/
+// */
 
 //decided to try something else but we might come back to this tutoral! It was just too confusing.
 
@@ -289,88 +289,96 @@ submitButton.onclick = function(){
 // youtube link: https://www.youtube.com/watch?v=R1S_NhKkvGA&t=668s
 
 //TEXT AND BUTTONS OUTPUT
-const textElement = document.getElementById('text');
-const optionButtons = document.getElementById('option-buttons');
+// const textElement = document.getElementById('text')
+// const optionButtonsElement = document.getElementById('option-buttons')
 
-//RUNING GAME: there will be an overall function running my game, and a state which I will try to use to log points per scenario option? let's see if that works for states tho
+// //RUNING GAME: there will be an overall function running my game, and a state which I will try to use to log points per scenario option? let's see if that works for states tho
 
-// adding id's initial values to stop undefined errors
-let chooseParents= {};
-let chooseHealth= {};
-let chooseEconomy={};
-let chooseVirtue= {};
-let score={pointsAdded:' '};
-let state={};
-
-
-function startGame() {
-    state = {}
-    showTextNode(chooseParents);
-
-}
-
-//for text to pair up according to its ID, example chooseParents, chooseHealth etc. for start up phase
-function showTextNode(textNodeIndex) {
-    const textNode = textNodes.find(textNode => textNode.id === textNodeIndex);
-    textElement.innerText = textNode.text;
-    while (optionButtons.firstChild) {
-        optionButtons.removeChild(optionButtons.firstChild);
-    }
-
-    //for each element, show it's option when clicked. so each click is first showing options for the buttons, which calls out for a click and then an output
-
-    // if I get stuck check function below
+// // adding id's initial values to stop undefined errors
+// let chooseParents= {};
+// let chooseHealth= {};
+// let chooseEconomy={};
+// let chooseVirtue= {};
+// let score={pointsAdded:' '};
+// let state={};
 
 
-    textNode.options.forEach(element => { 
-        if (showOption(option)) {
-            const button = document.createElement('button')
-            button.innerText = option.text
-            button.classList.add('btn')
-            button.addEventListener('click', () => selectOption(option))
-            optionButtons.appendChild(button);       
-        }
-    });
-}
 
-// selecting a b c d
-function selectOption(option) {
+// function startGame() {
+//   state = {}
+//   showTextNode(1)
+// }
+// //for text to pair up according to its ID, example chooseParents, chooseHealth etc. for start up phase
+// function showTextNode(textNodeIndex) {
+//     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex);
+//     textElement.innerText = textNode.text;
+//     while (optionButtons.firstChild) {
+//         optionButtons.removeChild(optionButtons.firstChild);
+//     }
 
-}
+//     //for each element, show it's option when clicked. so each click is first showing options for the buttons, which calls out for a click and then an output
 
-// text to be outputed for chooseParents scenario
+//     // if I get stuck check function below
 
-const textNodes = [{
+
+//     textNode.options.forEach(option => {
+//         if (showOption(option)) {
+//           const button = document.createElement('button')
+//           button.innerText = option.text
+//           button.classList.add('btn')
+//           button.addEventListener('click', () => selectOption(option))
+//           optionButtonsElement.appendChild(button)
+//         }
+//       })
+// }
+
+// // selecting a b c d
+// function selectOption(option) {
+//     const nextTextNodeId = option.nextText
+//     if (nextTextNodeId <= 0) {
+//       return startGame()
+//     }
+//     state = Object.assign(state, option.setState)
+//     showTextNode(nextTextNodeId)
+//   }
+// // text to be outputed for chooseParents scenario
+
+// const textNodes = [{
     
-    id: chooseParents,
-    text: "Today is your birthday! Welcome to our big and confussing world. Let's find out who your parents are.",
+//     id: 1,
+//     text: "Today is your birthday! Welcome to our big and confussing world. Let's find out who your parents are.",
 
-    options: [
+//     options: [
 
-        //this is option a
-        {
-            text: 'Your parents are unknown to you. On this sunny Tuesday in Autumn, you were born in a church-ran orphanage and will have to be raised by the nuns residing in the convent. Your new siblings from another mother, rejoice in the playground. Your early years will be strict and religious, yet safe.',
-            setState: { pointsAdded: 15 }, // add points sound later maybe?
-            nextText: chooseHealth, //at the end of each choice I want a new scenario, the next should be chooseHealth
-        },
+//         //this is option a
+//         {
+//             text: 'Your parents are unknown to you. On this sunny Tuesday in Autumn, you were born in a church-ran orphanage and will have to be raised by the nuns residing in the convent. Your new siblings from another mother, rejoice in the playground. Your early years will be strict and religious, yet safe.',
+//             setState: { pointsAdded: 15 }, // add points sound later maybe?
+//             nextText:2, //at the end of each choice I want a new scenario, the next should be chooseHealth
+//         },
 
-        {  //option b
-            text: 'Your father--may he rest in peace--died fighting a never ending war miles and miles away from home. He has left you an encouraging letter written during his last days when he learned his chances of survival weren\'t good. On this insanely hot summer afternoon, your mother reads it aloud to soothe your newborn cries. Your mother will have to be both the breadwinner and the emotional pillar of your early years. Your extended family is excited to have you around and they say you resemble your late father.',
-            setState: { pointsAdded: 20 },
-            nextText: chooseHealth,
-        },
+//         {  //option b
+//             text: 'Your father--may he rest in peace--died fighting a never ending war miles and miles away from home. He has left you an encouraging letter written during his last days when he learned his chances of survival weren\'t good. On this insanely hot summer afternoon, your mother reads it aloud to soothe your newborn cries. Your mother will have to be both the breadwinner and the emotional pillar of your early years. Your extended family is excited to have you around and they say you resemble your late father.',
+//             setState: { pointsAdded: 20 },
+//             nextText: 2,
+//         },
 
-        {   //option c
-            text: "You were born on a rainy Sunday night. Your parents are a couple of loving people. Your father is very dotting and spends a lot of time with you, and your mother cooks the best meals and likes to stroll you around the park. You have a very large and loud family including three sisters, two brothers, a cat, and a dog. ",
-            setState: { pointsAdded: 25 },
-            nextText: chooseHealth,
-        },
-        { //option d
-            text: "Today is March, Friday the 13th. It is thundering outside and your crackhead mother has just traded you for a box of menthols. The old lady who takes you into adoption was once her highschool teacher. Who is your father? Only the heavens know! You will never hear from your biological parents again, but at least you are brought into a home where a baby was truely a miracle. You will most likely be spoiled rotten.",
-            setState: { pointsAdded: 10 },
-            nextText: chooseHealth 
-        }
-
-    ]
+//         {   //option c
+//             text: "You were born on a rainy Sunday night. Your parents are a couple of loving people. Your father is very dotting and spends a lot of time with you, and your mother cooks the best meals and likes to stroll you around the park. You have a very large and loud family including three sisters, two brothers, a cat, and a dog. ",
+//             setState: { pointsAdded: 25 },
+//             nextText:2,
+//         },
+//         { //option d
+//             text: "Today is March, Friday the 13th. It is thundering outside and your crackhead mother has just traded you for a box of menthols. The old lady who takes you into adoption was once her highschool teacher. Who is your father? Only the heavens know! You will never hear from your biological parents again, but at least you are brought into a home where a baby was truely a miracle. You will most likely be spoiled rotten.",
+//             setState: { pointsAdded: 10 },
+//             nextText:2,
+//         }
+  
+//     ]
  
-}];
+// }];
+// console.log(textNodes)
+
+// ============================================================
+// previous method did not work, starting new method
+//=============================================================
