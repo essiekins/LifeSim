@@ -282,14 +282,18 @@ submitButton.onclick = function(){
 
 //decided to try something else but we might come back to this tutoral! It was just too confusing.
 
+/* ================================================ */
 // new method up next!
 //functions and objects!
+//following youtube tutorial on how to use eventListener with button options for any text based game
+// youtube link: https://www.youtube.com/watch?v=R1S_NhKkvGA&t=668s
 
 //TEXT AND BUTTONS OUTPUT
 const textElement= document.getElementById('text')
 const optionButtons=document.getElementById('option-buttons')
  
-//RUNING GAME
+//RUNING GAME: there will be an overall function running my game, and a state which I will try to use to log points per scenario option? let's see if that works for states tho
+
 function startGame() {
 state= {}
 showTextNode(a)
@@ -301,13 +305,13 @@ function showTextNode(textNodeIndex) {
   const textNode = textnodes.find(textNode.id === textNodeIndex)
   textElement.innerText = textNode.text
   while(optionsButtons.firstChild) {
-      optionsButtons.removeChild(optionsButtons.firstChild)
+      optionsButtons.removeChild(optionsButtons.firstChild)  //this should help prevent players from clicking other options
   }
 }
 
 //for each element, show it's option when clicked. so each click is first showing options for the buttons, which calls out for a click and then an output
 
-// if I get stuck check function selectOption
+// if I get stuck check function below
 
 textNode.options.forEach(element => {
     if (showOption(option)){
@@ -326,13 +330,13 @@ function selectOption(option) {
 
 // text to be outputed for chooseParents scenario
 
-// I LEFT OFF HERE!!!!!!
+// I LEFT OFF HERE!!!!!! saturday 7pm. 
 
 //there's a syntax error in const textNodes that needs fixing asap! before moving on to next scenario
 
-const textNodes= [
+const textNodes = [ 
     id: chooseParents,
-    text: "Today is your birthday! Welcome to out big and confussing world. Let's find out who your parents are.",
+    text:"Today is your birthday! Welcome to out big and confussing world. Let's find out who your parents are.",
     
     options [ { 
          //this is option a
