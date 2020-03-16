@@ -436,31 +436,54 @@ class scenario {
     }
 }
 //Starting scenatios
-let chooseParents; // 1
+let chooseParents; // 1 
 let chooseHealth; // 2
 let chooseWealth; // 3
 let chooseVirtue; // 4
 
-// Points system
+// Points system using math random or array, either way points start at 0
 let score = 0;
+
+//thse are strictly for the math random if I ever need it
 let addPoints;  // score = + this.Points
 let subPoints;  // score = -  this.Points
+
 
 
 function createScenario() {
     chooseParents = new scenario(
         "Parents",[
-    
+         
             "Good parents",
             "Okay parents",
             "Mediocre parents",
             "Horrible parents",
+            
         ]
     
     )
+    // loops for parents 
+    while(chooseParents=== ('parents' [0])){
+        let score= (addPoints+=25);
+    };
+     if (chooseParents=== ('parents' [1])) {
+        let score= (addPoints+=20);
+     };
+
+     if (chooseParents=== ('parents' [2])) {
+        addPoints+=15
+     };
+
+    if (chooseParents=== ('parents' [3])) {
+        addPoints+=10
+    }
+
+
 }
 
 
+// to be used for random events if ever needed
+// not for fixed scenarios
 
 function addPoints() {
     const choiceOfGainPoints= [+10,+15,+20,+25];
@@ -472,3 +495,4 @@ function subPoints() {
     const choiceOfLosePoints= [-10,-15,-20,-25];
     let score= (Math.floor(Math.random(indexOf.choiceOfLosePoints)))
 }
+
