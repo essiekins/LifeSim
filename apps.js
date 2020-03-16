@@ -445,8 +445,8 @@ let chooseVirtue; // 4
 let score = 0;
 
 //thse are strictly for the math random if I ever need it
-let addPoints;  // score = + this.Points
-let subPoints;  // score = -  this.Points
+//let addPoints;  // score = + this.Points
+//let subPoints;  // score = -  this.Points
 
 
 
