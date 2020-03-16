@@ -329,7 +329,7 @@ function showTextNode(textNodeIndex) {
             button.addEventListener('click', () => selectOption(option))
             optionButtonsElement.appendChild(button)
         }
-
+        /* tried to create function to connect to answer div */
         if (showOption(option)) {
             const option = document.createElement('answer')
             answer.innerText= option.text
