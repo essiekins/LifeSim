@@ -32,7 +32,7 @@
 //   1- Balanced and determined that the Baby Phase will have 4 determining factors in which each one will output a max of 25 points and minimum of 40 points towards total Baby Phase aka Starting Points.
 
 //   ****==== Baby Phase is now changed to be worth from 40-100 points. ====******
-  
+
 //  */
 
 // /* Testing: calling text values for Baby Phase: Parents */
@@ -62,7 +62,7 @@
 //         default:
 //         text=("Please choose an option.");
 //         break;
-     
+
 //     }
 //     document.getElementById("parents").innerHTML=text;
 // }
@@ -97,7 +97,7 @@
 
 //         d:"Today is March, Friday the 13th. It is thundering outside and your crackhead mother has just traded you for a box of menthols. The old lady who takes you into adoption was once her highschool teacher. Who is your father? Only the heavens know! You will never hear from your biological parents again, but at least you are brought into a home where a baby was truely a miracle. You will most likely be spoiled rotten.",
 //     }
-    
+
 // }];
 // console.log(parentsInLifeStart.options.a)
 // */
@@ -162,7 +162,7 @@
 
 // 	// for each question...
 // 	for(var i=0; i<questions.length; i++){
-		
+
 // 		// first reset the list of answers
 // 		answers = [];
 
@@ -238,25 +238,25 @@
 // // And here's the JavaScript to show the results of our quiz:
 
 // function showResults(questions, quizContainer, resultsContainer){
-	
+
 // 	// gather answer containers from our quiz
 // 	var answerContainers = quizContainer.querySelectorAll('.answers');
-	
+
 // 	// keep track of user's answers
 // 	var userAnswer = '';
 // 	var numCorrect = 0;
-	
+
 // 	// for each question...
 // 	for(var i=0; i<questions.length; i++){
 
 // 		// find selected answer
 // 		userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
-		
+
 // 		// if answer is correct
 // 		if(userAnswer===questions[i].correctAnswer){
 // 			// add to the number of correct answers
 // 			numCorrect++;
-			
+
 // 			// color the answers green
 // 			answerContainers[i].style.color = 'lightgreen';
 // 		}
@@ -284,101 +284,113 @@
 
 /* ================================================ */
 // new method up next!
-//functions and objects!
-//following youtube tutorial on how to use eventListener with button options for any text based game
+// functions and objects!
+// following youtube tutorial on how to use eventListener with button options for any text based game
 // youtube link: https://www.youtube.com/watch?v=R1S_NhKkvGA&t=668s
 
-//TEXT AND BUTTONS OUTPUT
-// const textElement = document.getElementById('text')
-// const optionButtonsElement = document.getElementById('option-buttons')
+// TEXT AND BUTTONS OUTPUT
+const textElement = document.getElementById('text')
+const optionButtonsElement = document.getElementById('option-buttons')
 
-// //RUNING GAME: there will be an overall function running my game, and a state which I will try to use to log points per scenario option? let's see if that works for states tho
+//RUNING GAME: there will be an overall function running my game, and a state which I will try to use to log points per scenario option? let's see if that works for states tho
 
-// // adding id's initial values to stop undefined errors
-// let chooseParents= {};
-// let chooseHealth= {};
-// let chooseEconomy={};
-// let chooseVirtue= {};
-// let score={pointsAdded:' '};
-// let state={};
-
-
-
-// function startGame() {
-//   state = {}
-//   showTextNode(1)
-// }
-// //for text to pair up according to its ID, example chooseParents, chooseHealth etc. for start up phase
-// function showTextNode(textNodeIndex) {
-//     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex);
-//     textElement.innerText = textNode.text;
-//     while (optionButtons.firstChild) {
-//         optionButtons.removeChild(optionButtons.firstChild);
-//     }
-
-//     //for each element, show it's option when clicked. so each click is first showing options for the buttons, which calls out for a click and then an output
-
-//     // if I get stuck check function below
+// adding id's initial values to stop undefined errors
+let chooseParents = {};
+let chooseHealth = {};
+let chooseEconomy = {};
+let chooseVirtue = {};
+let score = { pointsAdded: ' ' };
+let state = {};
 
 
-//     textNode.options.forEach(option => {
-//         if (showOption(option)) {
-//           const button = document.createElement('button')
-//           button.innerText = option.text
-//           button.classList.add('btn')
-//           button.addEventListener('click', () => selectOption(option))
-//           optionButtonsElement.appendChild(button)
-//         }
-//       })
-// }
 
-// // selecting a b c d
-// function selectOption(option) {
-//     const nextTextNodeId = option.nextText
-//     if (nextTextNodeId <= 0) {
-//       return startGame()
-//     }
-//     state = Object.assign(state, option.setState)
-//     showTextNode(nextTextNodeId)
-//   }
-// // text to be outputed for chooseParents scenario
+function startGame() {
+    state = {}
+    showTextNode(1)
+}
+//for text to pair up according to its ID, example chooseParents, chooseHealth etc. for start up phase
+function showTextNode(textNodeIndex) {
+    const textNode = textNodes.find(textNode => textNode.id === textNodeIndex);
+    textElement.innerText = textNode.text;
+    while (optionButtons.firstChild) {
+        optionButtons.removeChild(optionButtons.firstChild);
+    }
 
-// const textNodes = [{
+    //for each element, show it's option when clicked. so each click is first showing options for the buttons, which calls out for a click and then an output
+
+    // if I get stuck check function below
+
+
+    textNode.options.forEach(option => {
+        if (showOption(option)) {
+            const button = document.createElement('button')
+            button.innerText = option.text
+            button.classList.add('btn')
+            button.addEventListener('click', () => selectOption(option))
+            optionButtonsElement.appendChild(button)
+        }
+
+        if (showOption(option)) {
+            const option = document.createElement('answer')
+            answer.innerText= option.text
+            answer.classList.add('answer')
+            button.addEventListener('click', (option) => selectOption(option))
+            optionAnswerElement.appendChild(answer)
+        }
+    })
     
-//     id: 1,
-//     text: "Today is your birthday! Welcome to our big and confussing world. Let's find out who your parents are.",
+    
+    
+}
 
-//     options: [
+// selecting next scenario of options
+function selectOption(option) {
+    const nextTextNodeId = option.nextText
+    if (setState.addPoints <= 60) {    
+        return startGame()
+    }
+    state = Object.assign(state, option.setState) //asign some points
+    showTextNode(nextTextNodeId)
+}
 
-//         //this is option a
-//         {
-//             text: 'Your parents are unknown to you. On this sunny Tuesday in Autumn, you were born in a church-ran orphanage and will have to be raised by the nuns residing in the convent. Your new siblings from another mother, rejoice in the playground. Your early years will be strict and religious, yet safe.',
-//             setState: { pointsAdded: 15 }, // add points sound later maybe?
-//             nextText:2, //at the end of each choice I want a new scenario, the next should be chooseHealth
-//         },
+// text to be outputed for chooseParents scenario
+const textNodes = [{
 
-//         {  //option b
-//             text: 'Your father--may he rest in peace--died fighting a never ending war miles and miles away from home. He has left you an encouraging letter written during his last days when he learned his chances of survival weren\'t good. On this insanely hot summer afternoon, your mother reads it aloud to soothe your newborn cries. Your mother will have to be both the breadwinner and the emotional pillar of your early years. Your extended family is excited to have you around and they say you resemble your late father.',
-//             setState: { pointsAdded: 20 },
-//             nextText: 2,
-//         },
+    id: 1,
+    text: "Today is your birthday! Welcome to our big and confussing world. Let's find out who your parents are.",
 
-//         {   //option c
-//             text: "You were born on a rainy Sunday night. Your parents are a couple of loving people. Your father is very dotting and spends a lot of time with you, and your mother cooks the best meals and likes to stroll you around the park. You have a very large and loud family including three sisters, two brothers, a cat, and a dog. ",
-//             setState: { pointsAdded: 25 },
-//             nextText:2,
-//         },
-//         { //option d
-//             text: "Today is March, Friday the 13th. It is thundering outside and your crackhead mother has just traded you for a box of menthols. The old lady who takes you into adoption was once her highschool teacher. Who is your father? Only the heavens know! You will never hear from your biological parents again, but at least you are brought into a home where a baby was truely a miracle. You will most likely be spoiled rotten.",
-//             setState: { pointsAdded: 10 },
-//             nextText:2,
-//         }
-  
-//     ]
- 
-// }];
-// console.log(textNodes)
+    options: [
 
-// ============================================================
-// previous method did not work, starting new method
-//=============================================================
+        //this is option a
+        {
+            paragraph_A: 'Your parents are unknown to you. On this sunny Tuesday in Autumn, you were born in a church-ran orphanage and will have to be raised by the nuns residing in the convent. Your new siblings from another mother, rejoice in the playground. Your early years will be strict and religious, yet safe.',
+            setState: { pointsAdded: 15 }, // add points sound later maybe?
+            nextText: 2, //at the end of each choice I want a new scenario, the next should be chooseHealth
+        },
+
+        {  //option b
+            paragraph_B: 'Your father--may he rest in peace--died fighting a never ending war miles and miles away from home. He has left you an encouraging letter written during his last days when he learned his chances of survival weren\'t good. On this insanely hot summer afternoon, your mother reads it aloud to soothe your newborn cries. Your mother will have to be both the breadwinner and the emotional pillar of your early years. Your extended family is excited to have you around and they say you resemble your late father.',
+            setState: { pointsAdded: 20 },
+            nextText: 2,
+        },
+
+        {   //option c
+            paragraph_C: "You were born on a rainy Sunday night. Your parents are a couple of loving people. Your father is very dotting and spends a lot of time with you, and your mother cooks the best meals and likes to stroll you around the park. You have a very large and loud family including three sisters, two brothers, a cat, and a dog. ",
+            setState: { pointsAdded: 25 },
+            nextText: 2,
+        },
+        { //option d
+            paragraph_D: "Today is March, Friday the 13th. It is thundering outside and your crackhead mother has just traded you for a box of menthols. The old lady who takes you into adoption was once her highschool teacher. Who is your father? Only the heavens know! You will never hear from your biological parents again, but at least you are brought into a home where a baby was truely a miracle. You will most likely be spoiled rotten.",
+            setState: { pointsAdded: 10 },
+            nextText: 2,
+        }
+
+    ]
+
+}];
+
+// // ============================================================
+// // previous method did not work, starting new method
+// //=============================================================
+
+
