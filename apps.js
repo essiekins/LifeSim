@@ -462,7 +462,7 @@ function createScenario() {
         ]
     
     )
-    // loops for parents 
+    // loops for choose parents points 
     while(chooseParents=== ('parents' [0])){
         let score= (addPoints+=25);
     };
@@ -477,8 +477,8 @@ function createScenario() {
     if (chooseParents=== ('parents' [3])) {
         addPoints+=10
     }
-
-
+   document.getElementById('btn').innerHTML="text";
+   document.getElementById('btn').innerHTML="answer";
 }
 
 
