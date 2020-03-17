@@ -499,9 +499,13 @@
 // didn't work either
 
 /* =================================================== */
+//Testing output for the 500th hundred time
 
-function firstScenario (){
-    print.document.getElementsByClassName('text').innerHTML="some text";
-    document.getElementsByClassName('answer').innerHtml="this is some text";
-}
-
+function startGame() {
+   let greetPlayer = document.getElementById("text"); // please show up at 'text' id
+    if (greetPlayer.innerHTML === "Welcome to Choosy Life!") {   // show this text first, then swap to next
+      greetPlayer.innerHTML = "Hello smol human ヅ";  // this is next text
+    } else {
+      greetPlayer.innerHTML = "Please press Continue to start"; //
+    }
+  }
