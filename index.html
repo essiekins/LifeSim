@@ -6,15 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choosey Life Game</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Sniglet:800&display=swap" rel="stylesheet"> <!--logo font here-->
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet"> <!--console font-->
 <body>
     <script src="apps.js"></script>
 
     <div class="centerMe">
         <div id="gameContainer">
+            <div id="logo">✨ ☁️ Choosy Life 🌙 ✨ </div>
             <div id="screen">
+                <p id="score">Score:25</p>
+                <image src="./assets/babyanimation.gif_c200"></image>
                 <div id="scenarioBox">
-                    <div id="text"> </div> <!--text scenario goes here -->
-                    <p id="answer"> </p><!--I want my button's answer here-->
+                    <div id="text"> Welcome to the world! Time to see who your parents are. Please choose A, B, C or D. </div> <!--text scenario goes here -->
+                    <p id="answer"> You were born on a rainy Sunday night. Your parents are a couple of loving people. They spend a lot of time with you. You have a large family of 5 siblings and 2  pet dogs.  </p><!--I want my button's answer here-->
                 </div> <!--end of scenario window-->
             </div> <!--end of screen-->
 
@@ -26,7 +31,7 @@
                 <a href="#" class="btn" onclick="window.open('./index.html'); return false">Continue ➤</a>
                 
             </div> 
-            
+            <div id="credits">Essie Ponce ©2020</div>
 
 
         </div> <!--end of buttons-->
